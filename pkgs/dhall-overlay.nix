@@ -14,5 +14,9 @@ let
           ];
       };
 in
-  overlayPkgs.mkShell { buildInputs = [ overlayPkgs.dhall ]; }
+  # overlayPkgs.mkShell { buildInputs = [ overlayPkgs.dhall ]; }
 
+  stdenv.mkDerivation {
+    name = "dhall";
+    buildInputs = [ overlayPkgs.dhall ];
+  }
