@@ -1,3 +1,5 @@
+{stdenv}:
+
 let
     dhallOverlay =
       self: super: {
@@ -16,7 +18,7 @@ let
 in
   # overlayPkgs.mkShell { buildInputs = [ overlayPkgs.dhall ]; }
 
-  overlayPkgs.stdenv.mkDerivation {
+  stdenv.mkDerivation {
     name = "dhall";
     buildInputs = [ overlayPkgs.dhall ];
   }
