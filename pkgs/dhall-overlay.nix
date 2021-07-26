@@ -38,8 +38,8 @@ let
             "https://github.com/dhall-lang/dhall-haskell/releases/download/1.30.0/dhall-1.30.0-x86_64-linux.tar.bz2";
           };
 in
-  (
-    pkgs {
+  {
+    import <nixpkgs> {
       config = {};
       overlays =
         [
@@ -48,10 +48,11 @@ in
           # keepassOverlay
         ];
     }
-  ).mkShell
+  }:
+
+  pkgs.mkShell
   { buildInputs = [
     # pkgs.anki
     pkgs.dhall
     # pkgs.keepass_new 
   ]; }
-
