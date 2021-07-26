@@ -47,4 +47,4 @@ let
           ];
       };
 in
-  overlayPkgs.mkShell { buildInputs = [ pkgs.dhall ]; }
+  overlayPkgs.mkShell { buildInputs = [ overlayPkgs.dhall ]; }
