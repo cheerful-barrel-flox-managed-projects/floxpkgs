@@ -45,6 +45,6 @@ let
           [
             dhallOverlay
           ];
-      }
+      };
 in
   overlayPkgs.mkShell { buildInputs = [ pkgs.dhall ]; }
