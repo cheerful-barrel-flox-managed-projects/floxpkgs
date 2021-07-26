@@ -2,10 +2,10 @@ let
     dhallOverlay =
       self: super: {
         dhall = builtins.fetchTarball
-            "https://github.com/dhall-lang/dhall-haskell/releases/download/1.30.0/dhall-1.30.0-x86_64-linux.tar.bz2";
+            "https://github.com/dhall-lang/dhall-haskell/releases/download/1.39.0/dhall-1.39.0-x86_64-linux.tar.bz2";
           };
 
-    overlayPkgs = 
+    overlayPkgs =
       import <nixpkgs> {
         config = {};
         overlays =
@@ -15,3 +15,4 @@ let
       };
 in
   overlayPkgs.mkShell { buildInputs = [ overlayPkgs.dhall ]; }
+
