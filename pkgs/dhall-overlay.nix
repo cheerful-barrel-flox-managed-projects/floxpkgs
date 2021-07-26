@@ -47,4 +47,14 @@ let
           ];
       };
 in
-  pkgs.mkShell { buildInputs = [ overlayPkgs.dhall ]; }
+  overlayPkgs.mkShell { buildInputs = [ overlayPkgs.dhall ]; }
+
+# in job ‘dhall-overlay’:
+# error: attempt to call something which is not a function but a set
+# 
+#        at /nix/store/zd6ybj611y7ws76s2kf2an3vjw4wx547-source/lib/customisation.nix:69:16:
+# 
+#            68|     let
+#            69|       result = f origArgs;
+#              |                ^
+#            70|
