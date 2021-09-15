@@ -17,6 +17,7 @@ pythonPackages.buildPythonApplication {
   # The propagated equivalent of buildInputs. Note that python modules
   # must always be listed in this section on account of the way that the
   # python module support works in Nix.
+
   propagatedBuildInputs = [ python3Packages.termcolor ];
 
   # See https://nixos.org/manual/nixpkgs/stable/#ssec-stdenv-dependencies for
